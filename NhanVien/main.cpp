@@ -13,8 +13,11 @@ int main(){
 		CanBo *a = new CanBo();
 		cin>>*a;
 		NV[i]=a;
+		cb<<"Can bo thu "<<i+1<<":\n";
 		cb<<*a<<endl;
+		cb<<"=================================================\n";
 	}
 	cb.close();
+	
 	return 0;
 }

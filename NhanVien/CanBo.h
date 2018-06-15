@@ -9,7 +9,7 @@ class CanBo:public NhanVien{
 		int TienPC;
 	public:
 		CanBo():NhanVien(),PhongBan(""),HSLuong(0),TienPC(0){}
-		CanBo(NhanVien _nv,string _phongban,double _hsluong,int _phucap):NhanVien(_nv),PhongBan(_phongban),HSLuong(_hsluong),TienPC(_phucap){}
+		//CanBo(NhanVien _nv,string _phongban,double _hsluong,int _phucap):NhanVien(_nv),PhongBan(_phongban),HSLuong(_hsluong),TienPC(_phucap){}
 		CanBo(string _h,Date _ngaysinh,string _cmnd,string _phongban,double _hsluong,int _phucap):NhanVien(_h,_ngaysinh,_cmnd),PhongBan(_phongban),HSLuong(_hsluong),TienPC(_phucap){}
 		//setter.
 		void setPhongBan(string _h){
@@ -32,7 +32,7 @@ class CanBo:public NhanVien{
 			return this->TienPC;
 		}
 		//methods.
-		double TinhLuong(){
+		double TinhLuong()const{
 			return this->HSLuong*1500000+this->TienPC;
 		}
 		friend istream &operator >>(istream &in,CanBo &cb){
@@ -49,7 +49,15 @@ class CanBo:public NhanVien{
 			out<<"Ngay sinh: "<<cb.NgaySinh<<endl;
 			out<<"CMND: "<<cb.CMND<<endl;
 			out<<"Phong ban: "<<cb.PhongBan<<endl;
+			out<<"Luong hang thang: "<<cb.TinhLuong()<<endl;
 			return out;
+		}
+		void Print(){
+			cout<<"Ten: "<<this->HoTen<<endl;
+			cout<<"Ngay sinh: "<<this->NgaySinh<<endl;
+			cout<<"CMND: "<<this->CMND<<endl;
+			cout<<"Phong ban: "<<this->PhongBan<<endl;
+			cout<<"Luong hang thang: "<<TinhLuong()<<endl;
 		}
 		~CanBo(){}
 };

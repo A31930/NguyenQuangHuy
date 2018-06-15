@@ -9,7 +9,7 @@ class GiaoVien:public NhanVien{
 		int TienDay;
 	public:
 		GiaoVien():NhanVien(),Khoa(""),HSLuong(0),TienDay(0){}
-		GiaoVien(NhanVien _nv,string _khoa,double _hsluong,int _tienday):NhanVien(_nv),Khoa(_khoa),HSLuong(_hsluong),TienDay(_tienday){}
+		//GiaoVien(NhanVien nv,string _khoa,double _hsluong,int _tienday):NhanVien(nv),Khoa(_khoa),HSLuong(_hsluong),TienDay(_tienday){}
 		GiaoVien(string _h,Date _ngaysinh,string _cmnd,string _khoa,double _hsluong,int _tienday):NhanVien(_h,_ngaysinh,_cmnd),Khoa(_khoa),HSLuong(_hsluong),TienDay(_tienday){}
 		//setter.
 		void setKhoa(string _h){
@@ -32,7 +32,7 @@ class GiaoVien:public NhanVien{
 			return this->TienDay;
 		}
 		//methods.
-		double TinhLuong(){
+		double TinhLuong()const{
 			return this->HSLuong*1500000+this->TienDay;
 		}
 		friend istream &operator >>(istream &in,GiaoVien &gv){

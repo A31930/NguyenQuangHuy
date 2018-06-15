@@ -34,8 +34,7 @@ class NhanVien{
 			return this->CMND;
 		}
 		//methods.
-		double TinhLuong(){
-		}
+		virtual double TinhLuong()const=0;
 		~NhanVien(){}
 };
 #endif
